@@ -1,5 +1,10 @@
-import Server.makeRoutes
-import cats.effect.{ExitCode, IO, IOApp, Ref}
+import server.Http.makeRoutes
+import cats.effect.ExitCode
+import cats.effect.IO
+import cats.effect.IOApp
+import cats.effect.Ref
+import client.AlchemyClient
+import client.CoinMarketCapClient
 import org.http4s.blaze.server.BlazeServerBuilder
 import sttp.capabilities
 import sttp.capabilities.fs2.Fs2Streams

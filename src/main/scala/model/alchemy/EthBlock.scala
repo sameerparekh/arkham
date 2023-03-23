@@ -1,3 +1,5 @@
+package model.alchemy
+
 case class EthBlock(
   number: String,
   transactions: Seq[EthTransaction]) {

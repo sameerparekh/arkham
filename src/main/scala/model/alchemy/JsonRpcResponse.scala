@@ -1,3 +1,5 @@
+package model.alchemy
+
 import io.circe.Json
 
 case class JsonRpcResponse(

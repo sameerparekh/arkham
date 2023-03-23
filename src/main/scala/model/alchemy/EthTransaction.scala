@@ -1,3 +1,4 @@
+package model.alchemy
 
 import java.math.BigInteger
 import java.text.DecimalFormat
@@ -18,6 +19,7 @@ case class EthTransaction(
 
     val usd = ethUsd * eth
 
-    (Some(s"From: $from") ++ to.map(to => s"To: $to").orElse(Some("")) ++ Some(format(eth)) ++ Some(format(usd))).mkString("<td>", "</td><td>", "</td>")
+    (Some(s"From: $from") ++ to.map(to => s"To: $to").orElse(Some("")) ++ Some(format(eth)) ++ Some(
+      format(usd))).mkString("<td>", "</td><td>", "</td>")
   }
 }
