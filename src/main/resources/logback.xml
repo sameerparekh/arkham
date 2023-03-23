@@ -1,0 +1,25 @@
+<configuration debug="true">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %X{traceId} %-4level: %-25logger{10} %message%n</pattern>
+        </encoder>
+        <target>System.err</target>
+    </appender>
+
+    <!-- ===================================================== -->
+    <!-- Package Config -->
+    <!-- ===================================================== -->
+
+    <!-- Root Config -->
+    <root level="info">
+        <!--appender-ref ref="STDOUT"/-->
+        <appender-ref ref="STDERR"/>
+    </root>
+
+    <!-- Per-Package Config -->
+</configuration>
