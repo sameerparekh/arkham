@@ -10,16 +10,12 @@ case class EthTransaction(
   value: String) {
   val wei = BigInt(new BigInteger(value.drop(2), 16))
   val eth = BigDecimal(wei) / BigDecimal(10000000000L)
-
-  def format(value: BigDecimal) = {
-    val format = new DecimalFormat("######.####")
-    String.format("%15s", format.format(value))
-  }
+  
   def toView(ethUsd: BigDecimal): String = {
 
     val usd = ethUsd * eth
 
-    (Some(from) ++ to.orElse(Some("")) ++ Some(format(eth)) ++ Some(
-      format(usd))).mkString("<td>", "</td><td>", "</td>")
+    (Some(from) ++ to.orElse(Some("")) ++ Some(eth) ++ Some(
+      usd)).mkString("<td>", "</td><td>", "</td>")
   }
 }
